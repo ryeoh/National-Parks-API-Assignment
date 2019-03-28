@@ -9,7 +9,6 @@
 // Website URL
 // The user must be able to make multiple searches and see only the results for the current search.
 
-const apiKey = 'JgPKgAB5EWEAhUQIldOr3JGS245XO6xkU9A7YVb2';
 const searchURL = 'https://developer.nps.gov/api/v1/parks';
 
 // format query parameters
@@ -34,7 +33,7 @@ function getNPSdata(searchState, maxResults) {
     let params = {
         stateCode: searchState,
         limit: maxResults - 1,
-        'api_key': apiKey
+        'api_key': config.apiKey
     };
     const queryString = formatQueryParams(params);
     const url = searchURL + '?' + queryString;
